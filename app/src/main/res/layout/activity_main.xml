@@ -7,10 +7,10 @@
     tools:context=".welcome">
 
     <ImageView
-        android:id="@+id/img"
-        android:layout_width="192dp"
-        android:layout_height="203dp"
-        android:src="@android:drawable/alert_dark_frame"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="73dp" />
+        android:id="@+id/imageView"
+        android:layout_width="158dp"
+        android:layout_height="143dp"
+        app:srcCompat="@mipmap/ic_nawrus_foreground"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="134dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,7 +13,6 @@
         <activity android:name=".AddTask" />
         <activity android:name=".SignOut" />
         <activity android:name=".SignIn1" />
-        <activity android:name=".SignIn" />
         <activity android:name=".welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
