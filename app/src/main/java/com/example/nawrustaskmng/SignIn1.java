@@ -19,7 +19,7 @@ public class SignIn1 extends AppCompatActivity {
     private ImageView imgFlower;
     private EditText edtEmail;
     private Button btnSignIn;
-    private Button btnSignOut;
+    private Button btnSignUp;
     private EditText edtPass;
 
     @Override
@@ -30,7 +30,7 @@ public class SignIn1 extends AppCompatActivity {
         imgFlower=(ImageView) findViewById(R.id.imgFlower);
         edtEmail=(EditText)findViewById(R.id.edtEmail);
         btnSignIn=(Button)findViewById(R.id.btnSignIn);
-        btnSignOut=(Button)findViewById(R.id.btnSave);
+        btnSignUp=(Button)findViewById(R.id.btnSave);
         edtPass=(EditText)findViewById(R.id.edtPass);
 
 

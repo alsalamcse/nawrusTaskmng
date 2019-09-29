@@ -1,12 +1,19 @@
 package com.example.nawrustaskmng;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class SignOut extends AppCompatActivity {
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
+public class SignUp extends AppCompatActivity {
     private EditText edtName;
     private EditText edtLastName;
     private EditText edtPhone;
@@ -18,7 +25,7 @@ public class SignOut extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_out);
+        setContentView(R.layout.activity_sign_up);
         edtName=(EditText)findViewById(R.id.edtLastName);
         edtLastName=(EditText)findViewById(R.id.edtLastName);
         edtPhone=(EditText)findViewById(R.id.edtPhone);
@@ -26,6 +33,13 @@ public class SignOut extends AppCompatActivity {
         edtPassword=(EditText)findViewById(R.id.edtPassword);
         edtRewritePassword=(EditText)findViewById(R.id.edtRewritePassword);
         btnSave=(Button)findViewById(R.id.btnSave);
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dataHandler();
+            }
+        });
     }
     private void dataHandler()
     {
@@ -42,12 +56,39 @@ public class SignOut extends AppCompatActivity {
             isOk=false;
 
         }
-        if(passw1.length()<8)||passw1.equals(passw2)==false)
+        if((passw1.length()<8)||passw1.equals(passw2)==false)
         {
             edtRewritePassword.setError("Have to be at least 8 char and the same password");
             edtPassword.setError("Have to be at least 8 char and the same password");
-            isOk=fslse;
+            isOk=false;
+        }
+        if(fname.length()==0)
+        {
+            edtName.setError("enter name");
+            isOk=false;
+        }
+        if(isOk)
+        {
+            createAcount(email,passw1,fname,lname,phone);//createAcount(email,passw1)
+        }
+    }
+
+    private void createAcount(String email, String passw1, String fname, String lname, String phone) {
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        auth.createUserWithEmailAndPassword(email, passw1).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    finish();
+
+            }
+                else
+                {
+                    edtEmail.setError("sign n up failed");
+                }
         }
 
+    });
     }
+
 }
