@@ -3,6 +3,7 @@ package com.example.nawrustaskmng;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -89,6 +90,8 @@ public class SignIn1 extends AppCompatActivity {
                 if(task.isSuccessful()){
 
                     //todo go to main screen(all task activity)
+                    Intent i=new Intent(getApplication(),TempAllTaskActivity.class);
+                    startActivity(i);
 
                 }
                 else
