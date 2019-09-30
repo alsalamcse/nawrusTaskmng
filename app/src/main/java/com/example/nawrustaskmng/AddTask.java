@@ -17,13 +17,34 @@ public class AddTask extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task);
-
-        edtTitle=(EditText)findViewById(R.id.edtPassword);
-        edtSubject=(EditText)findViewById(R.id.edtLastName);
+        edtTitle=(EditText)findViewById(R.id.edtTitle);
+        edtSubject=(EditText)findViewById(R.id.edtSubject);
         txtPriorty=(TextView)findViewById(R.id.txtPriorty);
         skbpriorty=(SeekBar)findViewById(R.id.skbPriorty);
+
+
+
     }
+    private void dataHandler()
+    {
+        String title=edtTitle.getText().toString();
+        String subject=edtSubject.getText().toString();
+        int  seekbar=skbpriorty.getProgress();
+        boolean isOk=true;
+        if(title.length()<1)
+        {
+            edtTitle.setError("title length error");
+            isOk=false;
+
+        }
+        if(subject.length()<1)
+        {
+            edtSubject.setError(" subject length error ");
+            isOk=false;
+        }
+    }
+
 }

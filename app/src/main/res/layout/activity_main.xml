@@ -10,7 +10,9 @@
         android:id="@+id/imageView"
         android:layout_width="158dp"
         android:layout_height="143dp"
-        app:srcCompat="@mipmap/ic_nawrus_foreground"
-        tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="134dp" />
+        android:layout_marginTop="134dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_nawrus_foreground" />
 </androidx.constraintlayout.widget.ConstraintLayout>

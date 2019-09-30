@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "398103870914",
+    "firebase_url": "https://nawrustaskmng.firebaseio.com",
+    "project_id": "nawrustaskmng",
+    "storage_bucket": "nawrustaskmng.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398103870914:android:6f399c7eaf42835211aa5b",
+        "android_client_info": {
+          "package_name": "com.example.nawrustaskmng"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398103870914-tqschbkvmu8obrbe5ogeojsqbbrc3tuj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nawrustaskmng",
+            "certificate_hash": "8d4e87598d212bdb282d05faa7766dc9c486dbdf"
+          }
+        },
+        {
+          "client_id": "398103870914-eohpjuia1l1776msiob9q2d9ufva0165.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvLSfmvuoaM9WwvbPNCUjRrS5FGweRL0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398103870914-eohpjuia1l1776msiob9q2d9ufva0165.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

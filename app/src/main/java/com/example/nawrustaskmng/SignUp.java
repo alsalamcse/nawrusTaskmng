@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -14,27 +15,27 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SignUp extends AppCompatActivity {
-    private EditText edtName;
-    private EditText edtLastName;
+    private EditText edtFirstName;
+    private EditText etLastName;
     private EditText edtPhone;
     private EditText edtEmail;
-    private EditText edtPassword;
+    private EditText etPassword;
     private EditText edtRewritePassword;
-    private Button btnSave;
+    private Button btnSignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        edtName=(EditText)findViewById(R.id.edtLastName);
-        edtLastName=(EditText)findViewById(R.id.edtLastName);
+        edtFirstName=(EditText)findViewById(R.id.edtFirstName);
+        edtLastName=(EditText)findViewById(R.id.edtTitle);
         edtPhone=(EditText)findViewById(R.id.edtPhone);
         edtEmail=(EditText)findViewById(R.id.edtEmail);
-        edtPassword=(EditText)findViewById(R.id.edtPassword);
+        etPassword=(EditText)findViewById(R.id.etPassword);
         edtRewritePassword=(EditText)findViewById(R.id.edtRewritePassword);
-        btnSave=(Button)findViewById(R.id.btnSave);
+        btnSignUp=(Button)findViewById(R.id.btnSignUp);
 
-        btnSave.setOnClickListener(new View.OnClickListener() {
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dataHandler();
@@ -45,8 +46,8 @@ public class SignUp extends AppCompatActivity {
     {
         boolean isOk=true;//if all fields filled well
         String email=edtEmail.getText().toString();
-        String passw1=edtPassword.getText().toString();
-        String fname=edtName.getText().toString();
+        String passw1=etPassword.getText().toString();
+        String fname=edtFirstName.getText().toString();
         String lname=edtLastName.getText().toString();
         String phone=edtPhone.getText().toString();
         String passw2=edtRewritePassword.getText().toString();
@@ -59,7 +60,7 @@ public class SignUp extends AppCompatActivity {
         if((passw1.length()<8)||passw1.equals(passw2)==false)
         {
             edtRewritePassword.setError("Have to be at least 8 char and the same password");
-            edtPassword.setError("Have to be at least 8 char and the same password");
+            etPassword.setError("Have to be at least 8 char and the same password");
             isOk=false;
         }
         if(fname.length()==0)
@@ -79,6 +80,7 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    Toast.makeText(SignUp.this, "sign up succesful", Toast.LENGTH_SHORT).show();
                     finish();
 
             }

@@ -30,8 +30,16 @@ public class SignIn1 extends AppCompatActivity {
         imgFlower=(ImageView) findViewById(R.id.imgFlower);
         edtEmail=(EditText)findViewById(R.id.edtEmail);
         btnSignIn=(Button)findViewById(R.id.btnSignIn);
-        btnSignUp=(Button)findViewById(R.id.btnSave);
+        btnSignUp=(Button)findViewById(R.id.btnSignUp);
         edtPass=(EditText)findViewById(R.id.edtPass);
+
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplication(),SignUp.class);
+                startActivity(i);
+            }
+        });
 
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
