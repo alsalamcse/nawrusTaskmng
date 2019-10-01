@@ -28,7 +28,7 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         edtFirstName=(EditText)findViewById(R.id.edtFirstName);
-        edtLastName=(EditText)findViewById(R.id.edtTitle);
+        etLastName=(EditText)findViewById(R.id.edtTitle);
         edtPhone=(EditText)findViewById(R.id.edtPhone);
         edtEmail=(EditText)findViewById(R.id.edtEmail);
         etPassword=(EditText)findViewById(R.id.etPassword);
@@ -48,7 +48,7 @@ public class SignUp extends AppCompatActivity {
         String email=edtEmail.getText().toString();
         String passw1=etPassword.getText().toString();
         String fname=edtFirstName.getText().toString();
-        String lname=edtLastName.getText().toString();
+        String lname=etLastName.getText().toString();
         String phone=edtPhone.getText().toString();
         String passw2=edtRewritePassword.getText().toString();
         if(email.length()<4 || email.indexOf('@')<0 || email.indexOf('.')<0)
@@ -65,7 +65,7 @@ public class SignUp extends AppCompatActivity {
         }
         if(fname.length()==0)
         {
-            edtName.setError("enter name");
+            edtFirstName.setError("enter name");
             isOk=false;
         }
         if(isOk)
