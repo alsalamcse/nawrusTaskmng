@@ -7,6 +7,12 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import data.Mytask;
+
 public class AddTask extends AppCompatActivity {
 
     private EditText edtTitle;
@@ -45,6 +51,23 @@ public class AddTask extends AppCompatActivity {
             edtSubject.setError(" subject length error ");
             isOk=false;
         }
+        if(isOk)
+        {
+            Mytask t=new Mytask();
+            t.setTitle(title);
+            createMyTask(t);
+
+        }
+
+    }
+
+    private void createMyTask(Mytask t) {
+        //.1
+        FirebaseDatabase database=FirebaseDatabase.getInstance();
+        //.2
+        DatabaseReference reference = database.getReference();
+        String key = reference.child("tasks").push().getKey();
+        reference.child("task").child(key).setValue(t);
     }
 
 }

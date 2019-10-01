@@ -10,68 +10,85 @@
         android:id="@+id/edtFirstName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="87dp"
+        android:layout_marginRight="87dp"
+        android:layout_marginBottom="28dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="first name"
-        tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="74dp" />
+        app:layout_constraintBottom_toTopOf="@+id/etfName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etfName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="last name"
-        tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="147dp" />
+        app:layout_constraintBottom_toTopOf="@+id/edtPhone"
+        app:layout_constraintStart_toStartOf="@+id/edtFirstName"
+        app:layout_constraintTop_toBottomOf="@+id/edtFirstName" />
 
     <EditText
         android:id="@+id/edtPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="phone"
-        tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="207dp" />
+        app:layout_constraintBottom_toTopOf="@+id/edtEmail"
+        app:layout_constraintStart_toStartOf="@+id/etfName"
+        app:layout_constraintTop_toBottomOf="@+id/etfName" />
 
     <EditText
         android:id="@+id/edtEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="22dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="email"
-        tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="266dp" />
+        app:layout_constraintBottom_toTopOf="@+id/etPassword"
+        app:layout_constraintStart_toStartOf="@+id/edtPhone"
+        app:layout_constraintTop_toBottomOf="@+id/edtPhone" />
 
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="password"
-        tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="333dp" />
+        app:layout_constraintBottom_toTopOf="@+id/edtRewritePassword"
+        app:layout_constraintStart_toStartOf="@+id/edtEmail"
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
     <EditText
         android:id="@+id/edtRewritePassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="43dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="rewrite password"
-        tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="403dp" />
+        app:layout_constraintBottom_toTopOf="@+id/btnSignUp"
+        app:layout_constraintStart_toStartOf="@+id/etPassword"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
     <Button
         android:id="@+id/btnSignUp"
         android:layout_width="wrap_content"
-        android:layout_height="55dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="185dp"
         android:text="save"
-        tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="491dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/edtRewritePassword"
+        app:layout_constraintTop_toBottomOf="@+id/edtRewritePassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
