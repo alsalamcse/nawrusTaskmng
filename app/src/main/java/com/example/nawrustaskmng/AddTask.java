@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ public class AddTask extends AppCompatActivity {
     private EditText edtSubject;
     private TextView txtPriorty;
     private SeekBar skbpriorty;
+    private Button savebt;
 
 
 
@@ -34,6 +36,7 @@ public class AddTask extends AppCompatActivity {
         edtSubject=(EditText)findViewById(R.id.edtSubject);
         txtPriorty=(TextView)findViewById(R.id.txtPriorty);
         skbpriorty=(SeekBar)findViewById(R.id.skbPriorty);
+        savebt=(Button)findViewById(R.id.savebt);
 
 
 
@@ -86,6 +89,5 @@ public class AddTask extends AppCompatActivity {
                 }
             }
         });
-    }ِ
-
+    }
 }

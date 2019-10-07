@@ -8,41 +8,43 @@
 
     <EditText
         android:id="@+id/edtTitle"
-        android:layout_width="266dp"
-        android:layout_height="84dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="105dp"
-        android:layout_marginBottom="391dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="79dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginRight="51dp"
+        android:layout_marginBottom="148dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="title"
         app:layout_constraintBottom_toTopOf="@+id/txtPriorty"
+        app:layout_constraintEnd_toEndOf="@+id/skbPriorty"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/edtSubject"
-        android:layout_width="224dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginBottom="56dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="54dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="subject"
         app:layout_constraintBottom_toTopOf="@+id/skbPriorty"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/edtTitle"
         app:layout_constraintTop_toBottomOf="@+id/edtTitle" />
 
     <TextView
         android:id="@+id/txtPriorty"
-        android:layout_width="74dp"
-        android:layout_height="184dp"
-        android:layout_marginStart="85dp"
-        android:layout_marginLeft="85dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginRight="84dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginRight="54dp"
+        android:layout_marginBottom="426dp"
         android:text="priorty"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/skbPriorty"
@@ -51,12 +53,26 @@
 
     <SeekBar
         android:id="@+id/skbPriorty"
-        android:layout_width="168dp"
-        android:layout_height="47dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="37dp"
+        android:layout_marginRight="37dp"
+        android:layout_marginBottom="117dp"
+        app:layout_constraintBottom_toTopOf="@+id/savebt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtPriorty"
-        app:layout_constraintTop_toBottomOf="@+id/edtTitle"
-        app:layout_constraintVertical_bias="0.492" />
+        app:layout_constraintTop_toBottomOf="@+id/edtSubject" />
+
+    <Button
+        android:id="@+id/savebt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginBottom="252dp"
+        android:text="save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/skbPriorty" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,7 +27,7 @@ public class SignIn1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in1);
 
-        imgFlower=(ImageView) findViewById(R.id.imgFlower);
+
         edtEmail=(EditText)findViewById(R.id.edtEmail);
         btnSignIn=(Button)findViewById(R.id.btnSignIn);
         btnSignUp=(Button)findViewById(R.id.btnSignUp);
