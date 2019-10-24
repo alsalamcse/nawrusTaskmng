@@ -83,8 +83,10 @@ public class AddTask extends AppCompatActivity {
         FirebaseDatabase database=FirebaseDatabase.getInstance();
         //.2
         DatabaseReference reference = database.getReference();
+        FirebaseAuth auth=FirebaseAuth.getInstance();//to get the user uid(or other details like email)
+        String uid= auth.getCurrentUser().getUid();
         String key = reference.child("tasks").push().getKey();
-        reference.child("task").child(key).setValue(t).addOnCompleteListener(AddTask.this, new OnCompleteListener<Void>() {
+        reference.child("task").child(uid).child(key).setValue(t).addOnCompleteListener(AddTask.this, new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful())

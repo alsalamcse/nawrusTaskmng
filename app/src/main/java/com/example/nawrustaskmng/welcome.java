@@ -38,7 +38,7 @@ public class welcome extends AppCompatActivity {
             }
 
         };
-        th.start();
+        th.start(); 
     }
 
     @Override
