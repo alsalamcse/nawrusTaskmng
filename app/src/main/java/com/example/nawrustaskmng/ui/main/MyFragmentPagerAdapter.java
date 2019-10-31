@@ -14,7 +14,7 @@ import com.example.nawrustaskmng.R;
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
  * one of the sections/tabs/pages.
  */
-public class SectionsPagerAdapter extends FragmentPagerAdapter {
+public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
     private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2};
@@ -23,7 +23,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     private HistoryFragment historyFragment;
     private RemovedFragment removedFragment;
 
-    public SectionsPagerAdapter(Context context, FragmentManager fm) {
+    public MyFragmentPagerAdapter(Context context, FragmentManager fm) {
         super(fm);
         mContext = context;
         allTasksFragment=new AllTasksFragment();
