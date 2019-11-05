@@ -29,8 +29,7 @@ import data.TasksAdapter;
 public class AllTasksFragment extends Fragment {
     private TasksAdapter tasksAdapter;
     private ListView lvTasks;
-
-
+    private View IvTasks;
 
 
     public AllTasksFragment() {
@@ -45,8 +44,16 @@ public class AllTasksFragment extends Fragment {
         tasksAdapter=new TasksAdapter(getContext(),R.layout.taskitem);
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_all_tasks2, container, false);
-        IvTasks=view.findViewById()
-        return
+        IvTasks=view.findViewById(R.id.lstTasks);
+        lvTasks.setAdapter(tasksAdapter);
+
+        return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        readTasksFromFirebase();
     }
 
     public void readTasksFromFirebase(){
@@ -54,12 +61,14 @@ public class AllTasksFragment extends Fragment {
         FirebaseAuth auth=FirebaseAuth.getInstance();//to get current UID
         String uid = auth.getUid();
         DatabaseReference reference = database.getReference();
+        tasksAdapter.clear();
         reference.child("tasks").child(uid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot d:dataSnapshot.getChildren()) {
                     Mytask t=d.getValue(Mytask.class);
                     Log.d("MYTASK",t.toString());
+                    tasksAdapter.add(t);
 
                 }
             }
