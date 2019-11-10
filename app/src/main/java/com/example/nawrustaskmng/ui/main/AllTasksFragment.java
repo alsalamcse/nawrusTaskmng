@@ -29,7 +29,6 @@ import data.TasksAdapter;
 public class AllTasksFragment extends Fragment {
     private TasksAdapter tasksAdapter;
     private ListView lvTasks;
-    private View IvTasks;
 
 
     public AllTasksFragment() {
@@ -44,7 +43,7 @@ public class AllTasksFragment extends Fragment {
         tasksAdapter=new TasksAdapter(getContext(),R.layout.taskitem);
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_all_tasks2, container, false);
-        IvTasks=view.findViewById(R.id.lstTasks);
+        lvTasks=view.findViewById(R.id.lstTasks);
         lvTasks.setAdapter(tasksAdapter);
 
         return view;
@@ -62,7 +61,7 @@ public class AllTasksFragment extends Fragment {
         String uid = auth.getUid();
         DatabaseReference reference = database.getReference();
 
-        reference.child("tasks").child(uid).addValueEventListener(new ValueEventListener() {
+        reference.child("task").child(uid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 tasksAdapter.clear();
