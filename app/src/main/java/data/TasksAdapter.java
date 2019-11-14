@@ -40,6 +40,11 @@ public class TasksAdapter extends ArrayAdapter<Mytask> {
         ImageView ivInfo=vitem.findViewById(R.id.itmImageInfo);
         //getting data source
         Mytask mytask = getItem(position);
+
+
+        //todo טיפול באירוע מחיקה
+        cbIsCompleted.setOnCheckedChangeListener();
+
         //connect item view to data source
         tvTitle.setText(mytask.getTitle());
         tvSubject.setText(mytask.getSubject());

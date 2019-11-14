@@ -45,7 +45,6 @@ public class AllTasksFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_all_tasks2, container, false);
         lvTasks=view.findViewById(R.id.lstTasks);
         lvTasks.setAdapter(tasksAdapter);
-
         return view;
     }
 
