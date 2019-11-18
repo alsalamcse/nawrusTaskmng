@@ -9,6 +9,6 @@ public class FireBaseUtils {
     public static FirebaseDatabase db=FirebaseDatabase.getInstance();
     public static DatabaseReference getReference(){
         String uid=auth.getUid();
-        return db.getReference().child("tasks").child(uid);
+        return db.getReference().child("task").child(uid);
     }
 }
