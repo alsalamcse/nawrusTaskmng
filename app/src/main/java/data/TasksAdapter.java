@@ -41,7 +41,7 @@ public class TasksAdapter extends ArrayAdapter<Mytask> {
         TextView tvSubject=vitem.findViewById(R.id.itmTvSubject);
         RatingBar rbPrio=vitem.findViewById(R.id.itmRatingPriority);
         CheckBox cbIsCompleted=vitem.findViewById(R.id.itmchbxIsCompleted);
-        ImageView ivInfo=vitem.findViewById(R.id.itmImageInfo);
+        final ImageView ivInfo=vitem.findViewById(R.id.itmImageInfo);
         //getting data source
         final Mytask mytask = getItem(position);
 
@@ -67,7 +67,14 @@ public class TasksAdapter extends ArrayAdapter<Mytask> {
 
                         }
                     });
+                    ivInfo.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v)
+                        {
+                            Toast.makeText(getContext(), mytask.getTitle(), Toast.LENGTH_SHORT).show();
 
+                        }
+                    });
                 }
             }
         });
