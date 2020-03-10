@@ -1,6 +1,8 @@
 package data;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +47,9 @@ public class TasksAdapter extends ArrayAdapter<Mytask> {
         //getting data source
         final Mytask mytask = getItem(position);
 
+        tvTitle.setText(mytask.getTitle());
+        tvSubject.setText(mytask.getSubject());
+        rbPrio.setRating(mytask.getImportant());
 
         //todo טיפול באירוע מחיקה
         cbIsCompleted.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -67,6 +72,7 @@ public class TasksAdapter extends ArrayAdapter<Mytask> {
 
                         }
                     });
+                    
                     ivInfo.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v)
@@ -80,11 +86,44 @@ public class TasksAdapter extends ArrayAdapter<Mytask> {
         });
 
         //connect item view to data source
-        tvTitle.setText(mytask.getTitle());
-        tvSubject.setText(mytask.getSubject());
-        rbPrio.setRating(mytask.getImportant());
+
         cbIsCompleted.setChecked(false);
         return vitem;
 
     }
+
+    public void ShowMenu() {
+        final String[] option = {"Add", "View", "Select", "Delete"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.select_dialog_item);
+        adapter.addAll(option);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setTitle("Select option");
+        builder.setAdapter(adapter, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                if (i == 0) {
+                    Toast.makeText(getContext(), "Add", Toast.LENGTH_SHORT).show();
+                }
+                if (i == 1) {
+                    Toast.makeText(getContext(), "View", Toast.LENGTH_SHORT).show();
+                }
+                if (i == 2) {
+                    Toast.makeText(getContext(), "Select", Toast.LENGTH_SHORT).show();
+                }
+                if (i == 3) {
+                    Toast.makeText(getContext(), "Delete", Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+        });
+        final AlertDialog a = builder.create();
+        a.show();
+
+
+    }
+
+
 }
